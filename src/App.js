@@ -14,6 +14,13 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <Home />
+      <Icons />
+      <Suggestions />
+      <Switch>
+        <Route path="/recipe" component={Recipe} />
+      </Switch>
+      <Footer />
     </div>
   );
 }
