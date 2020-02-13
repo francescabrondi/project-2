@@ -1,6 +1,6 @@
 .Recipe {
-  background-color: #404e5a;
-  color: #748a9d;
+  background-color: $primary-color;
+  color: $text-color;
   padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -8,11 +8,11 @@
   justify-content: space-evenly;
 
   h2 {
-    color: #dc31cb;
+    color: $element-color;
     font-size: 20px;
   }
   h1 {
-    color: #dc31cb;
+    color: $element-color;
     font-size: 27px;
   }
   p {
@@ -31,10 +31,25 @@
     padding: 20px;
   }
   .Ingredients {
-    float: left;
     padding: 20px;
+    .Text {
+      padding-top: 100px;
+    }
   }
+
   .Instructions {
     width: 400px;
+    padding-top: 160px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  .grid-item {
+    img {
+      max-width: 100%;
+    }
   }
 }

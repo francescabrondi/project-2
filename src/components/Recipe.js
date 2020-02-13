@@ -16,20 +16,20 @@ class Recipe extends React.Component {
     const object = parseIngredients(this.state.meal);
     return (
       <div className="Recipe">
-        <div className="Title">
-          <h1>{this.state.meal.strMeal}</h1>
-        </div>
         <div className="Ingredients">
-          <h2>Ingredients</h2>
-          <p className="Ingredients-list">
-            {object.ingredients.map(ingredient => (
-              <p>{ingredient}</p>
-            ))}
-            {"  "}
-            {object.measures.map(measure => (
-              <p>{measure}</p>
-            ))}
-          </p>
+          <div className="Title">
+            <h1>{this.state.meal.strMeal}</h1>
+          </div>
+          <div className="Text">
+            <h2>Ingredients</h2>
+            <p className="Ingredients-list">
+              {object.ingredients.map((ingredient, index) => (
+                <p>
+                  {object.measures[index]}: {ingredient}
+                </p>
+              ))}
+            </p>
+          </div>
         </div>
         <div className="Instructions">
           <h2>Instructions</h2>

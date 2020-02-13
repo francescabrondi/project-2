@@ -1,11 +1,11 @@
 .Suggestions {
-  background-color: #404e5a;
-  color: #748a9d;
+  background-color: $primary-color;
+  color: $text-color;
   padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
   .Box {
-    background-color: #4e5d6a;
+    background-color: $secondary-color;
     height: 120px;
   }
   img {
