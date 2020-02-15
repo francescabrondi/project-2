@@ -41,10 +41,10 @@ class Recipe extends React.Component {
   }
 
   getRecipe = async () => {
-    const data = await fetchAPI(`lookup.php?i=52772`);
+    const data = await fetchAPI(`lookup.php?i=${this.state.meal.idMeal}`);
 
     this.setState({
-      meal: data.meals[0]
+      meal: data[1]
     });
   };
 }
