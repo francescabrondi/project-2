@@ -18,11 +18,35 @@ class Suggestions extends React.Component {
     this.getRecipe();
   }
 
+  status = isLoading => {
+    if (isLoading) {
+      return (
+        <div className="loader">
+          <img src="/spinner.gif" alt="" />
+        </div>
+      );
+    } else {
+      return (
+        <div className="error">
+          <p className="ops">OOOPS!</p>
+          <p className="number">404</p>
+          <p className="notfound">page&ensp;not&ensp;found</p>
+          <br />
+          <br />
+          <p className="failure">
+            You're&ensp; a&ensp; failure,&ensp; not&ensp; even &ensp;your
+            &ensp;mum &ensp;loves&ensp; you
+          </p>
+        </div>
+      );
+    }
+  };
+
   render() {
     return (
       <div className="Suggestions">
         <div className="container">
-          {!this.state.isLoading && this.state.meals.length !== 0 ? (
+          {this.state.meals.length !== 0 ? (
             <div className="grid">
               {this.state.meals.map(meal => (
                 <div className="grid-item" key={meal.idMeal}>
@@ -40,11 +64,7 @@ class Suggestions extends React.Component {
               ))}
             </div>
           ) : (
-            <div className="error">
-              <p className="ops">OOOPS!</p>
-              <p className="number">404</p>
-              <p className="notfound">page&ensp;not&ensp;found</p>
-            </div>
+            this.status(this.state.isLoading)
           )}
         </div>
       </div>

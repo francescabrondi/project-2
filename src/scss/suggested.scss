@@ -1,5 +1,5 @@
 .Suggestions {
-  color: $text-color;
+  color: $main-text-color;
   padding: 20px;
   font-family: $font;
 
@@ -19,9 +19,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10%;
-    margin-left: 10%;
+
+    padding-left: 20%;
     font-family: "Monoton", cursive;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: $primary-color;
 
     .ops {
       font-size: 100px;
@@ -35,6 +42,11 @@
     .notfound {
       font-size: 50px;
       margin-left: 20%;
+    }
+    .failure {
+      font-size: 30px;
+      padding-top: 80px;
+      padding-left: 50px;
     }
   }
 }

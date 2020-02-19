@@ -1,6 +1,5 @@
 .Recipe {
-  color: $text-color;
-  padding: 20px;
+  color: $main-text-color;
   font-family: $font;
   display: flex;
 
@@ -12,14 +11,13 @@
   }
   h1 {
     color: $element-color;
-    font-size: 27px;
+    font-size: 30px;
   }
   p {
     font-size: 16px;
     justify-content: left;
     text-align: justify;
     text-justify: inter-word;
-    padding: 10x;
   }
   .Image {
     width: 700px;
@@ -27,18 +25,19 @@
     float: right;
     display: flex;
     align-items: flex-end;
-    padding: 20px;
+    margin-top: 110px;
+    border-radius: 20px;
   }
   .Ingredients {
-    padding: 20px;
+    margin-top: 20px;
     .Text {
-      padding-top: 100px;
+      margin-top: 50px;
     }
   }
 
   .Instructions {
-    width: 400px;
-    padding-top: 160px;
+    width: 500px;
+    margin-top: 100px;
   }
 }
 
