@@ -1,19 +1,40 @@
 .Suggestions {
-  background-color: $primary-color;
   color: $text-color;
   padding: 20px;
   font-family: $font;
-  height: 100%;
+
   .Box {
     background-color: $secondary-color;
     height: 120px;
   }
   img {
-    padding-bottom: 20px;
+    padding-bottom: 0px;
   }
-  p {
+  .name {
     color: #a6bcd0;
     line-height: 120px;
     padding-left: 20px;
+  }
+  .error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10%;
+    margin-left: 10%;
+    font-family: "Monoton", cursive;
+
+    .ops {
+      font-size: 100px;
+    }
+    .number {
+      font-size: 200px;
+      margin-left: 30%;
+      margin-bottom: 0;
+      color: $element-color;
+    }
+    .notfound {
+      font-size: 50px;
+      margin-left: 20%;
+    }
   }
 }

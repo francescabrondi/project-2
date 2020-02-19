@@ -6,7 +6,9 @@ class Recipe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      meal: {}
+      meal: {
+        idMeal: this.props.match.params.id
+      }
     };
 
     this.getRecipe();
@@ -22,13 +24,11 @@ class Recipe extends React.Component {
           </div>
           <div className="Text">
             <h2>Ingredients</h2>
-            <p className="Ingredients-list">
+            <div className="Ingredients-list">
               {object.ingredients.map((ingredient, index) => (
-                <p>
-                  {object.measures[index]}: {ingredient}
-                </p>
+                <p key={index}>{`${object.measures[index]}: ${ingredient}`}</p>
               ))}
-            </p>
+            </div>
           </div>
         </div>
         <div className="Instructions">
@@ -44,7 +44,7 @@ class Recipe extends React.Component {
     const data = await fetchAPI(`lookup.php?i=${this.state.meal.idMeal}`);
 
     this.setState({
-      meal: data[1]
+      meal: data.meals[0]
     });
   };
 }

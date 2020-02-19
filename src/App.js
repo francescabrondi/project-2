@@ -17,8 +17,8 @@ function App() {
       <Home />
       <Icons /> */}
       <Switch>
-        <Route exact path="/" component={Suggestions} />
-        <Route path="/recipe" component={Recipe} />
+        <Route path="/category/:category" component={Suggestions} />
+        <Route path="/recipe/:id" component={Recipe} />
       </Switch>
       {/* <Footer /> */}
     </div>
