@@ -13,11 +13,11 @@ function Footer() {
         </i>
       </div> */}
       <div className="socials">
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-pinterest"></i>
-        <i class="fas fa-envelope"></i>
+        <i class="fab fa-instagram fa-2x"></i>
+        <i class="fab fa-facebook fa-2x"></i>
+        <i class="fab fa-twitter fa-2x"></i>
+        <i class="fab fa-pinterest fa-2x"></i>
+        <i class="fas fa-envelope fa-2x"></i>
       </div>
     </div>
   );

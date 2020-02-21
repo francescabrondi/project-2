@@ -1,9 +1,32 @@
 .Recipe {
   color: $main-text-color;
-  font-family: $font;
-  display: flex;
+  min-height: 90vh;
+  font-family: "Karla", sans-serif;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 0 3rem;
+  @include media-breakpoint-down(sm) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  @include media-breakpoint-down(md) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 
-  justify-content: space-evenly;
+  .words {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0 3rem;
+    @include media-breakpoint-down(sm) {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    @include media-breakpoint-down(md) {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
 
   h2 {
     color: $element-color;
@@ -20,13 +43,13 @@
     text-justify: inter-word;
   }
   .Image {
-    width: 700px;
-    height: 750px;
+    width: 100%;
+    height: auto;
     float: right;
     display: flex;
     align-items: flex-end;
     margin-top: 110px;
-    border-radius: 20px;
+    padding-left: 20px;
   }
   .Ingredients {
     margin-top: 20px;
@@ -36,18 +59,8 @@
   }
 
   .Instructions {
-    width: 500px;
+    width: 100%;
     margin-top: 100px;
-  }
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 1rem;
-  .grid-item {
-    img {
-      max-width: 100%;
-    }
+    margin-left: 20px;
   }
 }
