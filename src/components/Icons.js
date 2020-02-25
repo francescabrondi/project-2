@@ -1,6 +1,6 @@
 import React from "react";
 
-
+import randomColor from "randomcolor";
 import SVGIcon from "./SVGIcon";
 class Icons extends React.Component {
   constructor(props) {
@@ -23,45 +23,95 @@ class Icons extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col">
-                <SVGIcon name="wifi" width={100}
+                <SVGIcon name="Beef" width={100} fill={
+                  randomColor({
+                    luminosity: 'light',
+                    hue: 'black'
+                  })
+                }
                   onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <SVGIcon name="wifi" width={100}
+                <SVGIcon name="Bread" width={100} fill={
+                  randomColor({
+                    luminosity: 'light',
+                    hue: 'blue'
+                  })
+                }
                   onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <SVGIcon name="wifi" width={100}
+                <SVGIcon name="Broccolo" width={100} fill={
+                  randomColor({
+                    luminosity: 'light',
+                    hue: 'blue'
+                  })
+                }
                   onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <SVGIcon name="wifi" width={100}
+                <SVGIcon name="Chicken" width={100} fill={
+                  randomColor({
+                    luminosity: 'light',
+                    hue: 'blue'
+                  })
+                }
                   onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <SVGIcon name="wifi" width={100}
+                <SVGIcon name="Eggs" width={100} fill={
+                  randomColor({
+                    luminosity: 'light',
+                    hue: 'blue'
+                  })
+                }
                   onClick={this.handleOnClick} />
               </div>
             </div>
             <div className="row">
               <div className="col">
-                <SVGIcon name="wifi" width={100}
+                <SVGIcon name="Butter" width={100} fill={
+                  randomColor({
+                    luminosity: 'light',
+                    hue: 'blue'
+                  })
+                }
                   onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <SVGIcon name="wifi" width={100}
+                <SVGIcon name="Milk" width={100} fill={
+                  randomColor({
+                    luminosity: 'light',
+                    hue: 'blue'
+                  })
+                }
                   onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <SVGIcon name="wifi" width={100}
+                <SVGIcon name="Onion" width={100} fill={
+                  randomColor({
+                    luminosity: 'light',
+                    hue: 'blue'
+                  })
+                }
                   onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <SVGIcon name="wifi" width={100}
+                <SVGIcon name="Potatoes" width={100} fill={
+                  randomColor({
+                    luminosity: 'light',
+                    hue: 'blue'
+                  })
+                }
                   onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <SVGIcon name="wifi" width={100}
+                <SVGIcon name="Tomato" width={100} fill={
+                  randomColor({
+                    luminosity: 'light',
+                    hue: 'blue'
+                  })
+                }
                   onClick={this.handleOnClick} />
               </div>
             </div>
