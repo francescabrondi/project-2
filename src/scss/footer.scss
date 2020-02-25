@@ -18,9 +18,11 @@
     flex-direction: row;
     margin-right: 20px;
 
-    i {
+    svg {
+      width: 46px;
+      height: 46px;
       padding: 10px;
-      padding-top: 30px;
+      margin-top: 30px;
     }
   }
 }

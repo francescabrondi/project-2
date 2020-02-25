@@ -11,7 +11,7 @@
   }
   @include media-breakpoint-down(md) {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
   }
 
   .words {
@@ -24,7 +24,7 @@
     }
     @include media-breakpoint-down(md) {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 2fr;
     }
   }
 
@@ -62,5 +62,6 @@
     width: 100%;
     margin-top: 100px;
     margin-left: 20px;
+    padding-bottom: 25px;
   }
 }
