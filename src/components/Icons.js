@@ -1,5 +1,7 @@
 import React from "react";
 
+
+import SVGIcon from "./SVGIcon";
 class Icons extends React.Component {
   constructor(props) {
     super(props);
@@ -21,66 +23,46 @@ class Icons extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col">
-                <i
-                  class="fab fa-accessible-icon fa-4x"
-                  onClick={this.handleOnClick}
-                ></i>
+                <SVGIcon name="wifi" width={100}
+                  onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <i
-                  class="fab fa-accessible-icon fa-4x"
-                  onClick={this.handleOnClick}
-                ></i>
+                <SVGIcon name="wifi" width={100}
+                  onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <i
-                  class="fab fa-accessible-icon fa-4x"
-                  onClick={this.handleOnClick}
-                ></i>
+                <SVGIcon name="wifi" width={100}
+                  onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <i
-                  class="fab fa-accessible-icon fa-4x"
-                  onClick={this.handleOnClick}
-                ></i>
+                <SVGIcon name="wifi" width={100}
+                  onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <i
-                  class="fab fa-accessible-icon fa-4x"
-                  onClick={this.handleOnClick}
-                ></i>
+                <SVGIcon name="wifi" width={100}
+                  onClick={this.handleOnClick} />
               </div>
             </div>
             <div className="row">
               <div className="col">
-                <i
-                  class="fab fa-accessible-icon fa-4x"
-                  onClick={this.handleOnClick}
-                ></i>
+                <SVGIcon name="wifi" width={100}
+                  onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <i
-                  class="fab fa-accessible-icon fa-4x"
-                  onClick={this.handleOnClick}
-                ></i>
+                <SVGIcon name="wifi" width={100}
+                  onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <i
-                  class="fab fa-accessible-icon fa-4x"
-                  onClick={this.handleOnClick}
-                ></i>
+                <SVGIcon name="wifi" width={100}
+                  onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <i
-                  class="fab fa-accessible-icon fa-4x"
-                  onClick={this.handleOnClick}
-                ></i>
+                <SVGIcon name="wifi" width={100}
+                  onClick={this.handleOnClick} />
               </div>
               <div className="col">
-                <i
-                  class="fab fa-accessible-icon fa-4x"
-                  onClick={this.handleOnClick}
-                ></i>
+                <SVGIcon name="wifi" width={100}
+                  onClick={this.handleOnClick} />
               </div>
             </div>
           </div>
