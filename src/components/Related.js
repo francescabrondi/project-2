@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { fetchAPI } from "../config/utils";
 
-class Suggestions extends React.Component {
+class Related extends React.Component {
   constructor(props) {
     super(props);
 
@@ -80,10 +80,10 @@ class Suggestions extends React.Component {
     const data = await fetchAPI(`filter.php?i=${this.state.strCategory}`);
 
     this.setState({
-      meals: data.meals !== null ? data.meals.slice(0, 9) : [],
+      meals: data.meals !== null ? data.meals.reverse().slice(0, 3) : [],
       isLoading: false
     });
   };
 }
 
-export default Suggestions;
+export default Related;

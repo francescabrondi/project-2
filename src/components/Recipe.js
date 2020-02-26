@@ -2,14 +2,18 @@ import React from "react";
 
 import { fetchAPI, parseIngredients } from "../config/utils";
 
+import Related from "./Related";
+
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       meal: {
-        idMeal: this.props.match.params.id
+        idMeal: this.props.match.params.id,
+        strCategory: this.props.match.params.category
       }
     };
+    // console.log(this.state.strCategory);
 
     this.getRecipe();
   }
@@ -42,6 +46,7 @@ class Recipe extends React.Component {
           </div>
         </div>
         <img className="Image" src={this.state.meal.strMealThumb} alt="" />
+        <Related strCategory />
       </div>
     );
   }
