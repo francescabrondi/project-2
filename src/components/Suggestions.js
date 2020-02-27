@@ -63,6 +63,7 @@ class Suggestions extends React.Component {
                     <img src={meal.strMealThumb} alt={meal.strMeal} />
                     <div className="Box">
                       <p className="name">{meal.strMeal}</p>
+                      <div className="line"></div>
                     </div>
                   </Link>
                 </div>

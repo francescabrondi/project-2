@@ -6,15 +6,18 @@
   .Box {
     background-color: $secondary-color;
     height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   img {
     padding-bottom: 0px;
   }
   .name {
     color: $main-text-color;
-    line-height: 120px;
-    padding-left: 20px;
+    padding-left: 1rem;
     font-size: 20px;
+    margin: 0;
   }
   .error {
     display: flex;
@@ -52,20 +55,16 @@
   }
 }
 
-a:after {
+.line {
   background: none repeat scroll 0 0 transparent;
-  bottom: 40px;
-  content: "";
   display: block;
   height: 2px;
-  left: 0%;
-  position: absolute;
   background: $second-text-color;
   transition: width 0.5s ease 0s, left 0.5s ease 0s;
   width: 0;
 }
 
-a:hover:after {
+a:hover .line {
   width: 90%;
   left: 0;
 }

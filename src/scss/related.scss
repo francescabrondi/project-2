@@ -1,0 +1,62 @@
+.related {
+  grid-column: span 2;
+}
+
+.related-container {
+  color: $main-text-color;
+  padding: 20px;
+  font-family: $font;
+
+  .Box {
+    background-color: $secondary-color;
+    height: 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  img {
+    padding-bottom: 0px;
+  }
+  .name {
+    color: $main-text-color;
+    font-size: 15px;
+    padding-left: 1rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 3rem;
+    padding-bottom: 50px;
+    .grid-item {
+      transition: transform 0.5s;
+      &:hover {
+        transform: scale(1.03);
+        font-weight: 900;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 40px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0%;
+    position: absolute;
+    background: $second-text-color;
+    transition: width 0.5s ease 0s, left 0.5s ease 0s;
+    width: 0;
+  }
+
+  a:hover:after {
+    width: 90%;
+    left: 0;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}

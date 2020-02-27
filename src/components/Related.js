@@ -9,7 +9,7 @@ class Related extends React.Component {
     super(props);
 
     this.state = {
-      strCategory: this.props.match.params.category,
+      strCategory: this.props.strCategory,
       meals: [],
       isLoading: true
     };
@@ -45,33 +45,31 @@ class Related extends React.Component {
 
   render() {
     return (
-      <div className="Suggestions">
-        <div className="container">
-          {this.state.meals.length !== 0 ? (
-            <div className="grid">
-              {this.state.meals.map(meal => (
-                <div className="grid-item" key={meal.idMeal}>
-                  <Link
-                    to={{
-                      pathname: `/recipe/${meal.idMeal}`,
-                      state: {
-                        strCategory: this.state.strCategory
-                      }
-                    }}
-                    activeClassName="active"
-                  >
-                    <img src={meal.strMealThumb} alt={meal.strMeal} />
-                    <div className="Box">
-                      <p className="name">{meal.strMeal}</p>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          ) : (
-            this.status(this.state.isLoading)
-          )}
-        </div>
+      <div className="related-container">
+        {this.state.meals.length !== 0 ? (
+          <div className="grid">
+            {this.state.meals.map(meal => (
+              <div className="grid-item" key={meal.idMeal}>
+                <Link
+                  to={{
+                    pathname: `/recipe/${meal.idMeal}`,
+                    state: {
+                      strCategory: this.state.strCategory
+                    }
+                  }}
+                  activeClassName="active"
+                >
+                  <img src={meal.strMealThumb} alt={meal.strMeal} />
+                  <div className="Box">
+                    <p className="name">{meal.strMeal}</p>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        ) : (
+          this.status(this.state.isLoading)
+        )}
       </div>
     );
   }
@@ -80,7 +78,7 @@ class Related extends React.Component {
     const data = await fetchAPI(`filter.php?i=${this.state.strCategory}`);
 
     this.setState({
-      meals: data.meals !== null ? data.meals.reverse().slice(0, 3) : [],
+      meals: data.meals !== null ? data.meals.reverse().slice(0, 6) : [],
       isLoading: false
     });
   };

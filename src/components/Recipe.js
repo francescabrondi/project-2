@@ -9,12 +9,11 @@ class Recipe extends React.Component {
     super(props);
     this.state = {
       meal: {
-        idMeal: this.props.match.params.id,
-        strCategory: this.props.match.params.category
-      }
+        idMeal: this.props.match.params.id
+      },
+      strCategory: this.props.location.state.strCategory
     };
     // console.log(this.state.strCategory);
-
     this.getRecipe();
   }
 
@@ -46,7 +45,12 @@ class Recipe extends React.Component {
           </div>
         </div>
         <img className="Image" src={this.state.meal.strMealThumb} alt="" />
-        <Related strCategory />
+        <div className="related">
+          <p className="check">
+            Check out other recipes with {this.state.strCategory}
+          </p>
+          <Related strCategory={this.state.strCategory} />
+        </div>
       </div>
     );
   }
