@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import { fetchAPI } from "../config/utils";
 
+import Search from "./Search";
+
 class Suggestions extends React.Component {
   constructor(props) {
     super(props);
@@ -46,6 +48,7 @@ class Suggestions extends React.Component {
   render() {
     return (
       <div className="Suggestions">
+        <Search query={this.state.strCategory} />
         <div className="container">
           {this.state.meals.length !== 0 ? (
             <div className="grid">
