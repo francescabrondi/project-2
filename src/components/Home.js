@@ -22,11 +22,28 @@ const Home = () => {
 
   return (
     <div>
+      <div class="box">
+    <div class="display">
+      <div class="title">
+        So, what do you want to eat?
+          </div>
+      <div class="subtitle">
+        Start by selecting your ingredients!
+          </div>
+    </div>
+    <div class="scroll">
+      Scroll down
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+
       <Search fetchResults={fetchResults} />
       <Icons />
       <Suggestions strCategory={query} meals={meals} />
     </div>
   );
 };
+
+
 
 export default Home;
