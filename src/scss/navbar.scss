@@ -1,19 +1,43 @@
 .nav {
   background-color: $secondary-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  
+.navbar{
   display: flex;
   justify-content: space-between;
-}
+  width: 100%;
 
-.brand {
-  color: $main-text-color;
-  font-family: Karla;
-  font-size: 30px;
-}
-.form-inline {
-  display: flex;
-  justify-content: end;
-}
+  .brand {
+    color: $main-text-color;
+    font-family: Karla;
+    font-size: 30px;
+    padding: 1rem;
+    text-decoration: none;
+    :hover {
+    color: white;
+    }
+  }
+
+  .search-container {
+    display:flex;
+    align-items: center;
+  }
 
 .search {
-  color: white;
 }
+
+  #searchBar {
+    opacity: 0;
+    transition:0.5s opacity;
+    &.show {
+        opacity:1;
+    }
+  }
+}
+}
+
+
