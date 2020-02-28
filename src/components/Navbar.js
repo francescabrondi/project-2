@@ -27,7 +27,7 @@ const Navbar = () => (
           />
         </form>
         <svg
-          class="search"
+          class="nav-search"
           onClick={onClick}
           width="1.5em"
           height="1.5em"

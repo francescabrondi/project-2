@@ -5,39 +5,38 @@
   left: 0;
   right: 0;
   z-index: 1001;
-  
-.navbar{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  height: 7vh;
 
-  .brand {
-    color: $main-text-color;
-    font-family: Karla;
-    font-size: 30px;
-    padding: 1rem;
-    text-decoration: none;
-    :hover {
-    color: white;
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .brand {
+      color: $main-text-color;
+      font-family: Karla;
+      font-size: 30px;
+      padding: 1rem;
+      text-decoration: none;
+      :hover {
+        color: white;
+      }
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-search {
+    }
+
+    #searchBar {
+      opacity: 0;
+      transition: 0.5s opacity;
+      &.show {
+        opacity: 1;
+      }
     }
   }
-
-  .search-container {
-    display:flex;
-    align-items: center;
-  }
-
-.search {
 }
-
-  #searchBar {
-    opacity: 0;
-    transition:0.5s opacity;
-    &.show {
-        opacity:1;
-    }
-  }
-}
-}
-
-

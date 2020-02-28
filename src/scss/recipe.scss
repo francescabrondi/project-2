@@ -1,8 +1,9 @@
 .Recipe {
   color: $main-text-color;
-  min-height: 90vh;
+  min-height: 100vh;
   font-family: "Karla", sans-serif;
   display: grid;
+  margin-top: 7vh;
   grid-template-columns: 2fr 1fr;
   padding: 0 3rem;
   @include media-breakpoint-down(sm) {
