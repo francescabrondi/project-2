@@ -11,11 +11,21 @@ class Recipe extends React.Component {
       meal: {
         idMeal: this.props.match.params.id
       },
-      strCategory: this.props.location.state.strCategory
+      strCategory: this.props.location.state.strCategory,
+      meals: []
     };
     // console.log(this.state.strCategory);
     this.getRecipe();
+    this.getRelated();
   }
+
+  getRelated = async () => {
+    const data = await fetchAPI(`filter.php?i=${this.state.strCategory}`);
+
+    this.setState({
+      meals: data.meals !== null ? data.meals.reverse().slice(0, 6) : []
+    });
+  };
 
   render() {
     const object = parseIngredients(this.state.meal);
@@ -49,7 +59,10 @@ class Recipe extends React.Component {
           <p className="check">
             Check out other recipes with {this.state.strCategory}
           </p>
-          <Related strCategory={this.state.strCategory} />
+          <Related
+            meals={this.state.meals}
+            strCategory={this.state.strCategory}
+          />
         </div>
       </div>
     );
