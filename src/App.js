@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -11,16 +11,6 @@ import Footer from "./components/Footer";
 import "./scss/styles.scss";
 
 const App = () => {
-  // const [meals, setMeals] = useState([]);
-
-  // const fetchResults = query => {
-  //   if (query !== "") {
-  //     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
-  //       .then(response => response.json())
-  //       .then(data => setMeals(data.meals));
-  //   }
-  // };
-
   return (
     <div className="App">
       <Navbar />

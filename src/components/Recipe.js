@@ -14,7 +14,7 @@ class Recipe extends React.Component {
       strCategory: this.props.location.state.strCategory,
       meals: []
     };
-    // console.log(this.state.strCategory);
+
     this.getRecipe();
     this.getRelated();
   }

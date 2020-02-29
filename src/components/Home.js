@@ -13,7 +13,7 @@ const Home = () => {
       fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
         .then(response => response.json())
         .then(data => {
-          if (data.meals.length !== null) {
+          if (data.meals.length !== 0) {
             setMeals(data.meals);
           }
         });

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function onClick() {
   document.getElementById("searchBar").classList.toggle("show");
@@ -8,9 +9,14 @@ const Navbar = () => (
   <div className="nav">
     <nav className="navbar navbar-expand-lg">
       <div>
-        <a className="brand" href="Index.js">
-          <strong>FOOD</strong>HUB
-        </a>
+        {/* <a className="brand" href="Index.js"> */}
+        <div className="nav-logo">
+          <NavLink to="/">
+            <strong>FOOD</strong>
+            <span>HUB</span>
+          </NavLink>
+        </div>
+        {/* </a> */}
       </div>
 
       <div className="search-container">

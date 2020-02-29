@@ -11,14 +11,14 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    align-items: center;
 
-    .brand {
+    a {
       color: $main-text-color;
       font-family: Karla;
       font-size: 30px;
-      padding: 1rem;
       text-decoration: none;
-      :hover {
+      &:hover {
         color: white;
       }
     }
