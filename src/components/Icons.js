@@ -16,10 +16,7 @@ class Icons extends React.Component {
     return (
       <>
         <div className="Icons">
-          <div className="buttons">
-            <input className="input" type="text" placeholder="Input Field" />
-            <button>Reset</button>
-          </div>
+          <div className="buttons"></div>
           <div className="container">
             <div className="row">
               <div className="col">
