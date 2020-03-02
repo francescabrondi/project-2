@@ -35,7 +35,7 @@ const Home = () => {
 
       <Search fetchResults={fetchResults} />
       <Icons />
-      <Suggestions strCategory={query} meals={meals} />
+      <Suggestions strCategory={query} meals={meals} alert={alert} />
     </div>
   );
 };
