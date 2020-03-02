@@ -8,15 +8,20 @@ const Home = () => {
   const [query, setQuery] = useState("");
 
   const fetchResults = query => {
-    if (query !== "") {
+    if (query.length > 1) {
       setQuery(query);
       fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
         .then(response => response.json())
         .then(data => {
-          if (data.meals.length !== 0) {
+          if (data.meals) {
             setMeals(data.meals);
+          } else {
+            setMeals([]);
           }
         });
+    } else {
+      setQuery("");
+      setMeals([]);
     }
   };
 

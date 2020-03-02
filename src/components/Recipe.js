@@ -9,7 +9,8 @@ class Recipe extends React.Component {
     super(props);
     this.state = {
       meal: {
-        idMeal: this.props.match.params.id
+        idMeal: this.props.match.params.id,
+        strInstructions: ""
       },
       strCategory: this.props.location.state.strCategory,
       meals: []
@@ -50,7 +51,11 @@ class Recipe extends React.Component {
           <div className="Instructions">
             <h2>Instructions</h2>
             <div className="Instructions-text">
-              {this.state.meal.strInstructions}
+              <ol>
+                {this.state.meal.strInstructions.split(".").map(line => (
+                  <li>{line}</li>
+                ))}
+              </ol>
             </div>
           </div>
         </div>
