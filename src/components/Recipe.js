@@ -1,85 +1,87 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { fetchAPI, parseIngredients } from "../config/utils";
 
 import Related from "./Related";
 
-class Recipe extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      meal: {
-        idMeal: this.props.match.params.id,
-        strInstructions: ""
-      },
-      strCategory: this.props.location.state.strCategory,
-      meals: []
-    };
+function Recipe({ location, match }) {
+  const [meals, setMeals] = useState([]);
+  const [meal, setMeal] = useState({});
 
-    this.getRecipe();
-    this.getRelated();
-  }
+  const idMeal = match.params.id;
 
-  getRelated = async () => {
-    const data = await fetchAPI(`filter.php?i=${this.state.strCategory}`);
+  const { strCategory } = location.state;
+  const getRelated = async () => {
+    const data = await fetchAPI(`filter.php?i=${strCategory}`);
 
-    this.setState({
-      meals: data.meals !== null ? data.meals.reverse().slice(0, 6) : []
-    });
+    setMeals(data.meals !== null ? data.meals.reverse().slice(0, 6) : []);
   };
 
-  render() {
-    const object = parseIngredients(this.state.meal);
-    return (
-      <div className="Recipe">
-        <div className="words">
-          <div className="Ingredients">
-            <div className="Title">
-              <h1>{this.state.meal.strMeal}</h1>
+  const getRecipe = async () => {
+    const data = await fetchAPI(`lookup.php?i=${idMeal}`);
+
+    setMeal(data.meals[0]);
+    console.log(data.meals[0]);
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    console.log(window);
+  }, []);
+
+  useEffect(() => {
+    getRecipe(meals);
+    getRelated();
+  }, [idMeal]);
+
+  const object = parseIngredients(meal);
+
+  return (
+    <div className="Recipe">
+      {meal.hasOwnProperty("idMeal") ? (
+        <>
+          <div className="words">
+            <div className="Ingredients">
+              <div className="Title">
+                <h1>{meal.strMeal}</h1>
+              </div>
+              <div className="Text">
+                <h2>Ingredients</h2>
+                <div className="Ingredients-list">
+                  {object.ingredients.map((ingredient, index) => (
+                    <p
+                      key={index}
+                    >{`${object.measures[index]}: ${ingredient}`}</p>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="Text">
-              <h2>Ingredients</h2>
-              <div className="Ingredients-list">
-                {object.ingredients.map((ingredient, index) => (
-                  <p
-                    key={index}
-                  >{`${object.measures[index]}: ${ingredient}`}</p>
-                ))}
+            <div className="Instructions">
+              <h2>Instructions</h2>
+              <div className="Instructions-text">
+                <ol>
+                  {meal.strInstructions.split(".").map(line => {
+                    if (line !== "") {
+                      return <li>{line}</li>;
+                    } else {
+                      return <></>;
+                    }
+                  })}
+                </ol>
               </div>
             </div>
           </div>
-          <div className="Instructions">
-            <h2>Instructions</h2>
-            <div className="Instructions-text">
-              <ol>
-                {this.state.meal.strInstructions.split(".").map(line => (
-                  <li>{line}</li>
-                ))}
-              </ol>
-            </div>
+          <img className="Image" src={meal.strMealThumb} alt="" />
+          <div className="related">
+            <p className="check">Check out other recipes with {strCategory}</p>
+            <Related meals={meals} strCategory={strCategory} />
           </div>
-        </div>
-        <img className="Image" src={this.state.meal.strMealThumb} alt="" />
-        <div className="related">
-          <p className="check">
-            Check out other recipes with {this.state.strCategory}
-          </p>
-          <Related
-            meals={this.state.meals}
-            strCategory={this.state.strCategory}
-          />
-        </div>
-      </div>
-    );
-  }
-
-  getRecipe = async () => {
-    const data = await fetchAPI(`lookup.php?i=${this.state.meal.idMeal}`);
-
-    this.setState({
-      meal: data.meals[0]
-    });
-  };
+        </>
+      ) : (
+        <></>
+      )}
+    </div>
+  );
 }
 
 export default Recipe;

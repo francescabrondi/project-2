@@ -22,7 +22,6 @@ const getViewBox = name => {
       return "0 0 24 24";
     default:
       return "0 0 24 24";
-
   }
 };
 
@@ -94,7 +93,7 @@ const getPath = (name, props) => {
         />
       );
 
-      case "Tomato":
+    case "Tomato":
       return (
         <path
           {...props}
@@ -106,7 +105,6 @@ const getPath = (name, props) => {
   }
 };
 
-
 const SVGIcon = ({
   name = "",
   style = {},
@@ -114,19 +112,21 @@ const SVGIcon = ({
   viewBox = "",
   width = "50%",
   className = "",
-  height = "50%"
+  height = "50%",
+  onClick
 }) => (
-    <svg
-      width={width}
-      style={style}
-      height={height}
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox={viewBox || getViewBox(name)}
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-    >
-      {getPath(name, { fill })}
-    </svg>
-  );
+  <svg
+    width={width}
+    style={style}
+    height={height}
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox={viewBox || getViewBox(name)}
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    onClick={onClick}
+  >
+    {getPath(name, { fill })}
+  </svg>
+);
 
 export default SVGIcon;

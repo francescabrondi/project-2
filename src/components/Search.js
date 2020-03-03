@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-// import axios from "axios";
+const Search = ({ query, setQuery, fetchResults }) => {
+  const onSubmit = e => {
+    e.preventDefault();
 
-const Search = ({ fetchResults }) => {
-  const [query, setQuery] = useState("");
-
-  useEffect(() => fetchResults(query), [query]);
+    fetchResults(query);
+  };
 
   return (
-    <div className="search">
+    <form className="search" onSubmit={onSubmit}>
       <input
         value={query}
-        onChange={e => setQuery(e.target.value)}
+        onChange={e => {
+          setQuery(e.target.value);
+        }}
         type="text"
         placeholder="Search"
       />
-    </div>
+    </form>
   );
 };
 

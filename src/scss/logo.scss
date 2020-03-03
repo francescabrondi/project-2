@@ -4,10 +4,10 @@
   font-family: $font;
   font-weight: bold;
   padding: 20px;
+  color: $main-text-color;
   p {
-    color: $element-color;
   }
   span {
-    color: $second-element-color;
+    font-weight: lighter;
   }
 }

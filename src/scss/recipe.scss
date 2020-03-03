@@ -20,6 +20,7 @@
     grid-template-columns: 1fr 2fr;
     padding: 0 3rem;
     margin-bottom: 100px;
+    margin-top: 50px;
     @include media-breakpoint-down(sm) {
       display: grid;
       grid-template-columns: 1fr;
@@ -31,11 +32,11 @@
   }
 
   h2 {
-    color: $element-color;
+    color: white;
     font-size: 20px;
   }
   h1 {
-    color: $element-color;
+    color: white;
     font-size: 30px;
   }
   p {
@@ -50,7 +51,7 @@
     float: right;
     display: flex;
     align-items: flex-end;
-    margin-top: 130px;
+    margin-top: 180px;
     padding-left: 20px;
     margin-bottom: 100px;
   }
@@ -58,14 +59,18 @@
     margin-top: 20px;
     .Text {
       margin-top: 50px;
+      margin-left: 3px;
     }
   }
 
   .Instructions {
     width: 100%;
     margin-top: 100px;
-    margin-left: 20px;
+
     padding-bottom: 25px;
+    h2 {
+      margin-left: 22px;
+    }
   }
   .related {
     .check {

@@ -1,22 +1,30 @@
 import React from "react";
-
 import randomColor from "randomcolor";
 import SVGIcon from "./SVGIcon";
+import { fetchAPI } from "../config/utils";
+
 class Icons extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
-  handleOnClick = e => {
-    e.target.classList.toggle("active");
+  // handleOnClick = e => {
+  //   e.target.classList.toggle("active");
+  // };
+
+  handleOnClick = async category => {
+    const data = await fetchAPI(`filter.php?i=${category}`);
+
+    if (data.meals) {
+      this.props.setMeals(data.meals);
+    }
   };
 
   render() {
     return (
       <>
         <div className="Icons">
-          <div className="buttons"></div>
           <div className="container">
             <div className="row">
               <div className="col">
@@ -27,7 +35,7 @@ class Icons extends React.Component {
                     luminosity: "light",
                     hue: "black"
                   })}
-                  onClick={this.handleOnClick}
+                  onClick={() => this.handleOnClick("Beef")}
                 />
               </div>
               <div className="col">
@@ -38,7 +46,7 @@ class Icons extends React.Component {
                     luminosity: "light",
                     hue: "blue"
                   })}
-                  onClick={this.handleOnClick}
+                  onClick={() => this.handleOnClick("Bread")}
                 />
               </div>
               <div className="col">
@@ -49,7 +57,7 @@ class Icons extends React.Component {
                     luminosity: "light",
                     hue: "blue"
                   })}
-                  onClick={this.handleOnClick}
+                  onClick={() => this.handleOnClick("Broccoli")}
                 />
               </div>
               <div className="col">
@@ -60,7 +68,7 @@ class Icons extends React.Component {
                     luminosity: "light",
                     hue: "blue"
                   })}
-                  onClick={this.handleOnClick}
+                  onClick={() => this.handleOnClick("Chicken")}
                 />
               </div>
               <div className="col">
@@ -71,7 +79,7 @@ class Icons extends React.Component {
                     luminosity: "light",
                     hue: "blue"
                   })}
-                  onClick={this.handleOnClick}
+                  onClick={() => this.handleOnClick("Eggs")}
                 />
               </div>
             </div>
@@ -84,7 +92,7 @@ class Icons extends React.Component {
                     luminosity: "light",
                     hue: "blue"
                   })}
-                  onClick={this.handleOnClick}
+                  onClick={() => this.handleOnClick("Butter")}
                 />
               </div>
               <div className="col">
@@ -95,7 +103,7 @@ class Icons extends React.Component {
                     luminosity: "light",
                     hue: "blue"
                   })}
-                  onClick={this.handleOnClick}
+                  onClick={() => this.handleOnClick("Milk")}
                 />
               </div>
               <div className="col">
@@ -106,7 +114,7 @@ class Icons extends React.Component {
                     luminosity: "light",
                     hue: "blue"
                   })}
-                  onClick={this.handleOnClick}
+                  onClick={() => this.handleOnClick("Onion")}
                 />
               </div>
               <div className="col">
@@ -117,7 +125,7 @@ class Icons extends React.Component {
                     luminosity: "light",
                     hue: "blue"
                   })}
-                  onClick={this.handleOnClick}
+                  onClick={() => this.handleOnClick("Potatoes")}
                 />
               </div>
               <div className="col">
@@ -128,13 +136,10 @@ class Icons extends React.Component {
                     luminosity: "light",
                     hue: "blue"
                   })}
-                  onClick={this.handleOnClick}
+                  onClick={() => this.handleOnClick("Tomato")}
                 />
               </div>
             </div>
-          </div>
-          <div className="see-recipes">
-            <button className="see">See recipes</button>
           </div>
         </div>
       </>
