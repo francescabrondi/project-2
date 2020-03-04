@@ -62,7 +62,12 @@ function Recipe({ location, match }) {
                 <ol>
                   {meal.strInstructions.split(".").map(line => {
                     if (line !== "") {
-                      return <li>{line}</li>;
+                      return (
+                        <>
+                          <li>{line}</li>
+                          <br />
+                        </>
+                      );
                     } else {
                       return <></>;
                     }

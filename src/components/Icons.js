@@ -9,10 +9,6 @@ class Icons extends React.Component {
     this.state = {};
   }
 
-  // handleOnClick = e => {
-  //   e.target.classList.toggle("active");
-  // };
-
   handleOnClick = async category => {
     const data = await fetchAPI(`filter.php?i=${category}`);
 
@@ -37,6 +33,12 @@ class Icons extends React.Component {
                   })}
                   onClick={() => this.handleOnClick("Beef")}
                 />
+                <p
+                  className="label-icon"
+                  onClick={() => this.handleOnClick("Beef")}
+                >
+                  Beef
+                </p>
               </div>
               <div className="col">
                 <SVGIcon
@@ -48,6 +50,12 @@ class Icons extends React.Component {
                   })}
                   onClick={() => this.handleOnClick("Bread")}
                 />
+                <p
+                  className="label-icon"
+                  onClick={() => this.handleOnClick("Bread")}
+                >
+                  Bread
+                </p>
               </div>
               <div className="col">
                 <SVGIcon
@@ -59,6 +67,12 @@ class Icons extends React.Component {
                   })}
                   onClick={() => this.handleOnClick("Broccoli")}
                 />
+                <p
+                  className="label-icon"
+                  onClick={() => this.handleOnClick("Broccoli")}
+                >
+                  Broccoli
+                </p>
               </div>
               <div className="col">
                 <SVGIcon
@@ -70,6 +84,12 @@ class Icons extends React.Component {
                   })}
                   onClick={() => this.handleOnClick("Chicken")}
                 />
+                <p
+                  className="label-icon"
+                  onClick={() => this.handleOnClick("Chicken")}
+                >
+                  Chicken
+                </p>
               </div>
               <div className="col">
                 <SVGIcon
@@ -81,6 +101,12 @@ class Icons extends React.Component {
                   })}
                   onClick={() => this.handleOnClick("Eggs")}
                 />
+                <p
+                  className="label-icon"
+                  onClick={() => this.handleOnClick("Eggs")}
+                >
+                  Eggs
+                </p>
               </div>
             </div>
             <div className="row">
@@ -94,6 +120,12 @@ class Icons extends React.Component {
                   })}
                   onClick={() => this.handleOnClick("Butter")}
                 />
+                <p
+                  className="label-icon"
+                  onClick={() => this.handleOnClick("Butter")}
+                >
+                  Butter
+                </p>
               </div>
               <div className="col">
                 <SVGIcon
@@ -105,6 +137,13 @@ class Icons extends React.Component {
                   })}
                   onClick={() => this.handleOnClick("Milk")}
                 />
+                <p
+                  className="label-icon"
+                  onClick={() => this.handleOnClick("Milk")}
+                >
+                  {" "}
+                  Milk
+                </p>
               </div>
               <div className="col">
                 <SVGIcon
@@ -116,6 +155,12 @@ class Icons extends React.Component {
                   })}
                   onClick={() => this.handleOnClick("Onion")}
                 />
+                <p
+                  className="label-icon"
+                  onClick={() => this.handleOnClick("Onion")}
+                >
+                  Onion
+                </p>
               </div>
               <div className="col">
                 <SVGIcon
@@ -127,6 +172,12 @@ class Icons extends React.Component {
                   })}
                   onClick={() => this.handleOnClick("Potatoes")}
                 />
+                <p
+                  className="label-icon"
+                  onClick={() => this.handleOnClick("Potatoes")}
+                >
+                  Potato
+                </p>
               </div>
               <div className="col">
                 <SVGIcon
@@ -138,6 +189,12 @@ class Icons extends React.Component {
                   })}
                   onClick={() => this.handleOnClick("Tomato")}
                 />
+                <p
+                  className="label-icon"
+                  onClick={() => this.handleOnClick("Tomato")}
+                >
+                  Tomato
+                </p>
               </div>
             </div>
           </div>

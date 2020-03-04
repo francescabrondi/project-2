@@ -1,11 +1,14 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
     <div className="footer">
-      <div className="logo">
-        <strong>FOOD</strong> <span>HUB</span>{" "}
-      </div>
+      <NavLink to="/">
+        <div className="logo">
+          <strong>FOOD</strong> <span>HUB</span>{" "}
+        </div>
+      </NavLink>
 
       <div className="socials">
         <i class="fab fa-instagram"></i>

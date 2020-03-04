@@ -110,9 +110,9 @@ const SVGIcon = ({
   style = {},
   fill = "#000",
   viewBox = "",
-  width = "50%",
+  width = "90%",
   className = "",
-  height = "50%",
+  height = "90%",
   onClick
 }) => (
   <svg
