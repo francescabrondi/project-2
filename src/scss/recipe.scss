@@ -1,0 +1,85 @@
+.Recipe {
+  color: $main-text-color;
+  min-height: 100vh;
+  font-family: "Karla", sans-serif;
+  display: grid;
+  margin-top: 7vh;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 3rem;
+  @include media-breakpoint-down(sm) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  @include media-breakpoint-down(md) {
+    display: grid;
+    grid-template-columns: 2fr;
+  }
+
+  .words {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0 3rem;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    @include media-breakpoint-down(sm) {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    @include media-breakpoint-down(md) {
+      display: grid;
+      grid-template-columns: 2fr;
+    }
+  }
+
+  h2 {
+    color: white;
+    font-size: 20px;
+  }
+  h1 {
+    color: white;
+    font-size: 35px;
+  }
+  p {
+    font-size: 16px;
+    justify-content: left;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  .Image {
+    width: 100%;
+    height: auto;
+    float: right;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 180px;
+    padding-left: 20px;
+    margin-bottom: 100px;
+  }
+  .Ingredients {
+    margin-top: 20px;
+    h2 {
+      font-size: 27px;
+    }
+    .Text {
+      margin-top: 50px;
+      margin-left: 3px;
+    }
+  }
+
+  .Instructions {
+    width: 100%;
+    margin-top: 150px;
+    padding-bottom: 25px;
+    font-size: 18px;
+    h2 {
+      margin-left: 22px;
+      font-size: 27px;
+    }
+  }
+  .related {
+    .check {
+      font-size: 23px;
+      margin-left: 40px;
+    }
+  }
+}

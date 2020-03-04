@@ -1,0 +1,13 @@
+.logo {
+  display: flex;
+  font-size: 30px;
+  font-family: $font;
+  font-weight: bold;
+  padding: 20px;
+  color: $main-text-color;
+  p {
+  }
+  span {
+    font-weight: lighter;
+  }
+}

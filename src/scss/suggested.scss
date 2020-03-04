@@ -1,0 +1,93 @@
+.Suggestions {
+  color: $main-text-color;
+  padding: 20px;
+  font-family: $font;
+  margin-top: 7vh;
+
+  .Box {
+    background-color: $secondary-color;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  img {
+    padding-bottom: 0px;
+  }
+  .name {
+    color: $main-text-color;
+    padding-left: 1rem;
+    font-size: 20px;
+    margin: 0;
+  }
+  .error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 20%;
+    font-family: "Monoton", cursive;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: $primary-color;
+
+    .ops {
+      font-size: 100px;
+    }
+    .number {
+      font-size: 200px;
+      margin-left: 30%;
+      margin-bottom: 0;
+      color: $element-color;
+    }
+    .notfound {
+      font-size: 50px;
+      margin-left: 20%;
+    }
+    .failure {
+      font-size: 30px;
+      padding-top: 80px;
+      padding-left: 50px;
+    }
+  }
+}
+
+.line {
+  background: none repeat scroll 0 0 transparent;
+  display: block;
+  height: 2px;
+  background: $second-text-color;
+  transition: width 0.5s ease 0s, left 0.5s ease 0s;
+  width: 0;
+}
+
+a:hover .line {
+  width: 90%;
+  left: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  padding-bottom: 50px;
+  .grid-item {
+    transition: transform 0.5s;
+    &:hover {
+      transform: scale(1.03);
+      font-weight: 900;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+}

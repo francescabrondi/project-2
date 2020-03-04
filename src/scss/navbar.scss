@@ -1,0 +1,40 @@
+.nav {
+  background-color: $secondary-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  height: 7vh;
+  min-height: 70px;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+    a {
+      color: $main-text-color;
+      font-family: Karla;
+      font-size: 30px;
+      text-decoration: none;
+      &:hover {
+        color: white;
+      }
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+    }
+
+    #searchBar {
+      opacity: 0;
+      transition: 0.5s opacity;
+      &.show {
+        opacity: 1;
+      }
+    }
+  }
+}

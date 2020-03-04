@@ -1,3 +1,18 @@
-@import "~bootstrap/scss/bootstrap.scss";
-
 @import "variables";
+@import "ui";
+
+@import "bootstrap";
+
+@import "recipe";
+@import "suggested";
+@import "footer";
+@import "logo";
+@import "related";
+
+@import "icons";
+
+@import "navbar";
+
+@import "home";
+
+@import "search";
