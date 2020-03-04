@@ -4,7 +4,7 @@
   font-family: "Karla", sans-serif;
   display: grid;
   margin-top: 7vh;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   padding: 0 3rem;
   @include media-breakpoint-down(sm) {
     display: grid;
@@ -60,6 +60,9 @@
     h2 {
       font-size: 27px;
     }
+    p {
+      padding-top: 20px;
+    }
     .Text {
       margin-top: 50px;
       margin-left: 3px;
@@ -74,6 +77,9 @@
     h2 {
       margin-left: 22px;
       font-size: 27px;
+    }
+    ol {
+      padding-top: 20px;
     }
   }
   .related {
